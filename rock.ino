@@ -1,70 +1,64 @@
-const readline = require('readline');
 
-// Function to get a random choice (rock, paper, or scissors) for the computer
-function getComputerChoice() {
-  const choices = ['rock', 'paper', 'scissors'];
-  const randomIndex = Math.floor(Math.random() * choices.length);
-  return choices[randomIndex];
+#define PIN_RED    23 // GPIO23
+
+#define PIN_GREEN  22 // GPIO22
+
+#define PIN_BLUE   21 // GPIO21
+
+
+
+void setup() {
+
+  pinMode(PIN_RED,   OUTPUT);
+
+  pinMode(PIN_GREEN, OUTPUT);
+
+  pinMode(PIN_BLUE,  OUTPUT);
+
 }
 
-// Function to determine the winner between the player and the computer
-function determineWinner(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) {
-    return "It's a tie!";
-  } else if (
-    (playerChoice === 'rock' && computerChoice === 'scissors') ||
-    (playerChoice === 'paper' && computerChoice === 'rock') ||
-    (playerChoice === 'scissors' && computerChoice === 'paper')
-  ) {
-    return 'You win!';
-  } else {
-    return 'Computer wins!';
-  }
+
+
+void loop() {
+
+  // color code #00C9CC (R = 0,   G = 201, B = 204)
+
+  analogWrite(PIN_RED,   0);
+
+  analogWrite(PIN_GREEN, 201);
+
+  analogWrite(PIN_BLUE,  204);
+
+
+
+  delay(1000); // keep the color 1 second
+
+
+
+  // color code #F7788A (R = 247, G = 120, B = 138)
+
+  analogWrite(PIN_RED,   247);
+
+  analogWrite(PIN_GREEN, 120);
+
+  analogWrite(PIN_BLUE,  138);
+
+
+
+  delay(1000); // keep the color 1 second
+
+
+
+  // color code #34A853 (R = 52,  G = 168, B = 83)
+
+  analogWrite(PIN_RED,   52);
+
+  analogWrite(PIN_GREEN, 168);
+
+  analogWrite(PIN_BLUE,  83);
+
+
+
+  delay(1000); // keep the color 1 second
+
 }
-
-// Function to play the game
-function playGame(playerChoice) {
-  const computerChoice = getComputerChoice();
-  console.log(`You chose: ${playerChoice}`);
-  console.log(`Computer chose: ${computerChoice}`);
-  console.log(determineWinner(playerChoice, computerChoice));
-  console.log();
-
-  // Ask the user if they want to play again
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
-  rl.question('Do you want to play again? (yes or no): ', (answer) => {
-    rl.close();
-    if (answer.toLowerCase() === 'yes') {
-      startGame(); // Restart the game
-    } else {
-      console.log('Thanks for playing. Goodbye!');
-    }
-  });
-}
-
-// Function to start the game and ask for the user's choice
-function startGame() {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
-  rl.question('Enter your choice (rock, paper, or scissors): ', (playerChoice) => {
-    rl.close();
-    const validChoices = ['rock', 'paper', 'scissors'];
-    if (!validChoices.includes(playerChoice)) {
-      console.log('Invalid choice. Please choose either rock, paper, or scissors.');
-      startGame(); // Ask again for the choice
-      return;
-    }
-
-    playGame(playerChoice);
-  });
-}
-
-// Start the game for the first time
-startGame();
