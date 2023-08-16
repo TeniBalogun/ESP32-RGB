@@ -3,7 +3,7 @@
 ## Getting Started
 1. Clone or download this repository to your local machine.
 2. Set up your hardware as described in the "Hardware Setup" section below.
-3. Upload the provided code (`rgb_led_code.ino`) to your ESP32 board.
+3. Upload the provided code (`RGB.ino`) to your ESP32 board.
 4. Observe the RGB LED cycling through three different colors: Cyan (#00C9CC), Coral (#F7788A), and Green (#34A853).
 
 ## Hardware
