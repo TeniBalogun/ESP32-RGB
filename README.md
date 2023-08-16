@@ -19,6 +19,20 @@ Usage:
 
 Compatibility
   This code is specifically written for ESP32 microcontroller boards, which support the analogWrite() and pinMode() functions.
+
+Code Overview
+  This code controls an RGB LED using an ESP32 microcontroller. It cycles through three colors: cyan, coral, and green. Each color is displayed 
+  for one second.
+  
+  The pins for each color channel are defined as follows:
+  
+  Red Pin: GPIO23
+  Green Pin: GPIO22
+  Blue Pin: GPIO21
+  The setup() function configures these pins as outputs, while the loop() function sets the LED to each color using the analogWrite() function 
+  and waits for one second with delay().
+  
+  You can modify the colors and timings in the loop() function to customize the LED behavior.
   
 Credits:
   This code was written by Teniola Balogun. Feel free to modify and use it according to your needs. Also some information was taken from - 
