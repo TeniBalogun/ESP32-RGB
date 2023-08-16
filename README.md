@@ -7,7 +7,8 @@ Hardware
     - Resistors
       
     Hardware Setup:
-    ![image](https://github.com/TeniBalogun/ESP32-RGB/assets/140060893/8a84b535-fcfb-414a-b9e3-c598c022865b)
+    
+  ![image](https://github.com/TeniBalogun/ESP32-RGB/assets/140060893/8a84b535-fcfb-414a-b9e3-c598c022865b)
 
 Usage:
   Set up your hardware as described in the "Hardware Setup" section.
